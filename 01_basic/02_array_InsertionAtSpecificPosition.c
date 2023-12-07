@@ -38,26 +38,39 @@ int main()
         scanf("%d", &position);
         position--;
 
-                // Get Element that are inserted
-        printf("\nEnter Element that you wanna to Insert : ");
-        scanf("%d", &inputNum);
-
-        // Shift the value of the array
-        for (int idx = size; idx >= position; idx--)
+        if (position > size || position <= 0)
         {
-            myArry[idx + 1] = myArry[idx];
-            // myArry[idx] = myArry[idx - 1];
+            printf("\nError : Invalid Array Position\n Array Size is : %d", size);
         }
-
-        // Insert Element At Specific Postion & Increment Array size
-        myArry[position] = inputNum;
-        size++;
-
-        // Display Array
-        printf("\nYour Array Element as following");
-        for (int idx = 0; idx < size; idx++)
+        else
         {
-            printf("\nElement of Array index [%d] => %d", idx, myArry[idx]);
+
+            // Get Element that are inserted
+            printf("\nEnter Element that you wanna to Insert : ");
+            scanf("%d", &inputNum);
+
+            // Method 1: Start
+            // Shift the value of the array
+            // for (int idx = size; idx >= position; idx--)
+            // {
+            //     myArry[idx + 1] = myArry[idx];
+            // }
+            // Method 1: End
+
+            // Method 2: Start
+            myArry[size] = myArry[position];
+
+
+            // Insert Element At Specific Postion & Increment Array size
+            size++;
+            myArry[position] = inputNum;
+
+            // Display Array
+            printf("\nYour Array Element as following");
+            for (int idx = 0; idx < size; idx++)
+            {
+                printf("\nElement of Array index [%d] => %d", idx, myArry[idx]);
+            }
         }
     }
 
