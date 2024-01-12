@@ -1,0 +1,192 @@
+MCA 101 Programming in C with Data Structure
+
+
+==========
+Unit - II
+==========
+
+
+======================================== * ========================================
+
+Question 1: What is Array in C?
+
+Answer: An array in C is a fixed-size collection of similar data items stored in contiguous memory locations. It can be used to store the collection of primitive data types such as int, char, float, etc., and also derived and user-defined data types such as pointers, structures, etc.
+arrays in c
+
+
+C Array Declaration
+
+In C, we have to declare the array like any other variable before using it. We can declare an array by specifying its name, the type of its elements, and the size of its dimensions. When we declare an array in C, the compiler allocates the memory block of the specified size to the array name.
+
+
+Syntax of Array Declaration: 
+
+data_type array_name [size];
+         or
+data_type array_name [size1] [size2]...[sizeN];
+
+
+Access Array Elements
+
+We can access any element of an array in C using the array subscript operator [ ]  and the index value i of the element.
+
+array_name [index];
+
+
+C Array Traversal
+
+Traversal is the process in which we visit every element of the data structure. For C array traversal, we use loops to iterate through each element of the array.
+
+Array Traversal using for Loop
+
+for (int i = 0; i < N; i++) {
+    array_name[i];
+}
+
+
+Types of Array in C
+
+There are two types of arrays based on the number of dimensions it has. They are as follows:
+
+    (A) One Dimensional Arrays (1D Array)
+    (B) Multidimensional Arrays
+
+1. One Dimensional Array in C
+
+The One-dimensional arrays, also known as 1-D arrays in C are those arrays that have only one dimension.
+
+Syntax of 1D Array in C
+
+array_name [size];
+
+2. Multidimensional Array in C
+
+Multi-dimensional Arrays in C are those arrays that have more than one dimension. Some of the popular multidimensional arrays are 2D arrays and 3D arrays. We can declare arrays with more dimensions than 3d arrays but they are avoided as they get very complex and occupy a large amount of space.
+
+A. Two-Dimensional Array in C
+
+A Two-Dimensional array or 2D array in C is an array that has exactly two dimensions. They can be visualized in the form of rows and columns organized in a two-dimensional plane.
+
+Syntax of 2D Array in C
+
+array_name[size1] [size2];
+
+B. Three-Dimensional Array in C
+
+Another popular form of a multi-dimensional array is Three Dimensional Array or 3D Array. A 3D array has exactly three dimensions. It can be visualized as a collection of 2D arrays stacked on top of each other to create the third dimension.
+Syntax of 3D Array in C
+
+array_name [size1] [size2] [size3];
+
+
+======================================== * ========================================
+
+Question 2: Passing arrays to a function?
+
+Answer: In C, the whole array cannot be passed as an argument to a function. However, you can pass a pointer to an array without an index by specifying the array’s name. Arrays in C are always passed to the function as pointers pointing to the first element of the array.
+
+Syntax
+
+In C, we have three ways to pass an array as a parameter to the function. In the function definition, use the following syntax:
+
+1. return_type foo ( array_type array_name[size], ...);
+
+Mentioning the size of the array is optional. So the syntax can be written as:
+
+2. return_type foo ( array_type array_name[], ...);
+
+In both of the above syntax, even though we are defining the argument as array it will still be passed as a pointer. So we can also write the syntax as:
+
+3. return_type foo ( array_type* array_name, ...);
+
+
+======================================== * ========================================
+
+Question 3: Strings & it's operations?
+
+Answer: The C string functions are built-in functions that can be used for various operations and manipulations on strings. These string functions can be used to perform tasks such as string copy, concatenation, comparison, length, etc. The <string.h> header file contains these string functions.
+
+
+Some of the commonly used string functions in C are as follows:
+
+1. strcat() Function
+
+The strcat() function in C is used for string concatenation. It will append a copy of the source string to the end of the destination string.
+
+
+#include <stdio.h> 
+
+int main() 
+{ 
+	char dest[50] = "This is an"; 
+	char src[50] = " example"; 
+
+	printf("dest Before: %s\n", dest); 
+
+	// concatenating src at the end of dest 
+	strcat(dest, src); 
+
+	printf("dest After: %s", dest); 
+
+	return 0; 
+}
+
+2. strlen() Function
+
+The strlen() function calculates the length of a given string. It doesn’t count the null character ‘\0’.
+
+Syntax
+
+
+// C program to demonstrate the strlen() function 
+
+#include <stdio.h> 
+#include <string.h> 
+
+int main() 
+{ 
+	// Declare and initialize a character array 'str'
+
+	char str[] = "GeeksforGeeks"; 
+
+	// Calculate the length of the string using the strlen() 
+	// function and store it in the variable 'length' 
+
+	int length = strlen(str); 
+
+	// Print the length of the string 
+	printf("String: %s\n", str); 
+
+	printf("Length: %d\n", length); 
+
+	return 0; 
+}
+
+
+3. strcmp() Function
+
+The strcmp() is a built-in library function in C. This function takes two strings as arguments and compares these two strings lexicographically.
+
+int strcmp(str1, str2);
+
+Return Value
+
+    If str1 is less than str2, the return value is less than 0.
+    If str1 is greater than str2, the return value is greater than 0.
+    If str1 is equal to str2, the return value is 0.
+
+4. strncpy()
+
+The function strncpy() is similar to strcpy() function, except that at most n bytes of src are copied.
+
+strncpy(el1, el2);
+
+
+5. strstr()
+
+The strstr() function in C is used to search the first occurrence of a substring in another string.
+
+Syntax
+
+strstr(str1, str2)
+
