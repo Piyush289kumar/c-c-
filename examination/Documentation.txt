@@ -234,3 +234,438 @@ C language provides a wide range of operators that can be classified into 6 type
 5. Assignment Operators =  =  +=  -=  *=  /=  %=  &=  !=  ^=  >>=  <<=
 6. Other Operators = sizeof  ,  ?  :  .  -> 
 
+
+What is Expression?
+
+Expression: An expression is a combination of operators, constants and variables. An expression may consist of one or more operands, and zero or more operators to produce a value. 
+
+
+Example:
+
+a+b
+c
+s-1/7*f
+.
+.
+etc
+
+
+Types of Expressions:
+
+Expressions may be of the following types:
+
+    (1) Constant expressions: Constant Expressions consists of only constant values. A constant value is one that doesn’t change.
+    Examples:
+
+    5, 10 + 5 / 6.0, 'x’
+
+    (2) Integral expressions: Integral Expressions are those which produce integer results after implementing all the automatic and explicit type conversions.
+    Examples:
+
+    x, x * y, x + int( 5.0)
+
+    where x and y are integer variables.
+
+    (3) Floating expressions: Float Expressions are which produce floating point results after implementing all the automatic and explicit type conversions.
+    Examples:
+
+    x + y, 10.75
+
+    where x and y are floating point variables.
+
+    (4) Relational expressions: Relational Expressions yield results of type bool which takes a value true or false. When arithmetic expressions are used on either side of a relational operator, they will be evaluated first and then the results compared. Relational expressions are also known as Boolean expressions.
+    Examples:
+
+    x <= y, x + y > 2
+
+    (5) Logical expressions: Logical Expressions combine two or more relational expressions and produces bool type results.
+    Examples:
+
+     x > y && x == 10, x == 10 || y == 5 
+
+    (6) Pointer expressions: Pointer Expressions produce address values.
+    Examples:
+
+    &x, ptr, ptr++
+
+    where x is a variable and ptr is a pointer.
+
+    (7) Bitwise expressions: Bitwise Expressions are used to manipulate data at bit level. They are basically used for testing or shifting bits.
+    Examples:
+
+    x << 3
+
+    shifts three bit position to left
+
+    y >> 1
+
+    shifts one bit position to right.
+
+    Shift operators are often used for multiplication and division by powers of two.
+
+
+
+======================================== * ========================================
+
+Question 5: Preprocessor directives?
+
+Answer: Preprocessors are programs that process the source code before compilation. Several steps are involved between writing a program and executing a program in C.
+
+Preprocessor Directives in C
+
+Preprocessor programs provide preprocessor directives that tell the compiler to preprocess the source code before compiling. All of these preprocessor directives begin with a ‘#’ (hash) symbol. The ‘#’ symbol indicates that whatever statement starts with a ‘#’ will go to the preprocessor program to get executed. We can place these preprocessor directives anywhere in our program.
+
+Examples of some preprocessor directives are: #include, #define, #ifndef, etc.
+
+
+======================================== * ========================================
+
+Question 6: Input & output?
+
+Answer: C language has standard libraries that allow input and output in a program. The stdio.h or standard input output library in C that has methods for input and output.
+
+
+scanf()
+
+The scanf() method, in C, reads the value from the console as per the type specified. Syntax:
+
+    scanf(“%X”, &variableOfXType); where %X is the format specifier in C. It is a way to tell the compiler what type of data is in a variable and & is the address operator in C, which tells the compiler to change the real value of this variable, stored at this address in the memory.   
+
+
+printf()
+
+The printf() method, in C, prints the value passed as the parameter to it, on the console screen. Syntax:
+
+
+How to take input and output of basic types in C?
+
+The basic type in C includes types like int, float, char, etc. Inorder to input or output the specific type, the X in the above syntax is changed with the specific format specifier of that type. The Syntax for input and output for these are:
+
+    Integer:
+
+Input: scanf("%d", &intVariable);
+Output: printf("%d", intVariable);
+
+    Float:
+
+Input: scanf("%f", &floatVariable);
+Output: printf("%f", floatVariable);
+
+    Character:
+
+Input: scanf("%c", &charVariable);
+Output: printf("%c", charVariable);
+
+Please refer Format specifiers in C for more examples. 
+
+Input: scanf("%s", stringVariable);
+Output: printf("%s", stringVariable);
+
+Example: 
+
+// C program to show input and output
+  
+#include <stdio.h>
+  
+int main()
+{
+  
+    // Declare string variable
+    // as character array
+    char str[50];
+  
+    // --- String ---
+    // To read a word
+  
+    // Input the Word
+    printf("Enter the Word: ");
+    scanf("%s\n", str);
+  
+    // Output the Word
+    printf("\nEntered Word is: %s", str);
+  
+    // --- String ---
+    // To read a Sentence
+  
+    // Input the Sentence
+    printf("\n\nEnter the Sentence: ");
+    scanf("%[^\n]\ns", str);
+  
+    // Output the String
+    printf("\nEntered Sentence is: %s", str);
+  
+    return 0;
+}
+Output:
+
+Enter the Word: GeeksForGeeks
+Entered Word is: GeeksForGeeks
+
+Enter the Sentence: Geeks For Geeks
+Entered Sentence is: Geeks For Geeks
+
+
+
+======================================== * ========================================
+
+Question 7: Casting, Precedence?
+
+Answer:
+
+(A) TypeCasting
+
+Typecasting in C is the process of converting one data type to another data type by the programmer using the casting operator during program design. 
+
+In typecasting, the destination data type may be smaller than the source data type when converting the data type to another data type, that’s why it is also called narrowing conversion.
+
+Syntax:
+
+int x;
+float y;
+y = (float) x;
+
+Types of Type Casting in C
+
+In C there are two major types to perform type casting.
+
+
+    Implicit type casting
+    Explicit type casting
+
+1. Implicit Type Casting
+
+Implicit type casting in C is used to convert the data type of any variable without using the actual value that the variable holds. It performs the conversions without altering any of the values which are stored in the data variable. Conversion of lower data type to higher data type will occur automatically.
+ 
+2. Explicit Type Casting
+
+There are some cases where if the datatype remains unchanged, it can give incorrect output. In such cases, typecasting can help to get the correct output and reduce the time of compilation. In explicit type casting, we have to force the conversion between data types. This type of casting is explicitly defined within the program.
+
+Advantages of Type Casting
+
+    Type casting in C programming makes the program very lightweight.
+    Type representation and hierarchies are some features we can take advantage of with the help of typecasting.
+    Type casting helps programmers to convert one data type to another data type.
+
+
+
+(B) Operator Precedence and Associativity in C
+
+The concept of operator precedence and associativity in C helps in determining which operators will be given priority when there are multiple operators in the expression. It is very common to have multiple operators in C language and the compiler first evaluates the operater with higher precedence. It helps to maintain the ambiguity of the expression and helps us in avoiding unnecessary use of parenthesis.
+
+
+
+======================================== * ========================================
+
+Question 8: Scope of variables?
+
+Answer: The scope of a variable in C is the block or the region in the program where a variable is declared, defined, and used. Outside this region, we cannot access the variable and it is treated as an undeclared identifier.
+
+(1) The scope is the area under which a variable is visible.
+(2) The scope of an identifier is the part of the program where the identifier may directly be accessible.
+(3) We can only refer to a variable in its scope.
+(4) In C, all identifiers are lexically(or statically) scoped.
+
+Types of Scope Rules in C
+
+C scope rules can be covered under the following two categories:
+
+    (1) Global Scope
+    (2) Local Scope
+
+1. Global Scope:
+
+The global scope refers to the region outside any block or function.
+
+(1) The variables declared in the global scope are called global variables.
+(2) Global variables are visible in every part of the program.
+(3) Global is also called File Scope as the scope of an identifier starts at the beginning of the file and ends at the end of the file.
+
+2. Local Scope:
+
+The local scope refers to the region inside a block or a function. It is the space enclosed between the { } braces.
+
+(1) The variables declared within the local scope are called local variables.
+(2) Local variables are visible in the block they are declared in and other blocks nested inside that block.
+(3) Local scope is also called Block scope.
+(4) Local variables have internal linkage.
+
+
+
+======================================== * ========================================
+
+Question 9: Function in C?
+
+Answer: A function in C is a set of statements that when called perform some specific task. 
+
+Syntax of Functions in C
+
+The syntax of function can be divided into 3 aspects:
+
+(1) Function Declaration
+(2) Function Definition
+(3) Function Calls
+
+(1) Function Declarations
+
+In a function declaration, we must provide the function name, its return type, and the number and type of its parameters. A function declaration tells the compiler that there is a function with the given name defined somewhere else in the program.
+
+Syntax
+
+return_type name_of_the_function (parameter_1, parameter_2);
+
+The parameter name is not mandatory while declaring functions. We can also declare the function without using the name of the data variables.
+
+(2) Function Definition
+
+The function definition consists of actual statements which are executed when the function is called (i.e. when the program control comes to the function).
+
+
+(3) Function Call
+
+A function call is a statement that instructs the compiler to execute the function. We use the function name and parameters in the function call.
+
+Example
+
+int sum(int a, int b) 
+{ 
+  return a + b; 
+}
+
+int main()
+{
+
+  int add = sum(10, 30);
+  printf("Sum is: %d", add);
+  return 0;
+}
+
+
+
+Parameter Passing Techniques in C
+
+There are two ways in which we can pass the parameters to the function in C:
+
+
+1. Pass By Value
+
+This method uses in-mode semantics. Changes made to formal parameters do not get transmitted back to the caller. Any modifications to the formal parameter variable inside the called function or method affect only the separate storage location and will not be reflected in the actual parameter in the calling environment. This method is also called call by value.
+
+
+2. Pass by Pointers
+
+This technique uses a pointer. In function we pass memory address (pointer) of a variable rather than passing the actual value of variable. This passing technique allows the function to access and modify the content at that particular memory location.
+
+
+// C program to demonstrate the pass by pointer in Function
+
+#include <stdio.h>
+
+void modifyVal(int* myptr)
+{
+	*myptr = *myptr + 5;
+}
+
+int main()
+{
+
+	int x = 5;
+	int* myptr = &x;
+
+	modifyVal(myptr);
+
+	printf("Modified value of x is: %d\n", x);
+	return 0;
+}
+
+
+======================================== * ========================================
+
+Question 10: Function Prototype in C?
+
+Answer: The C function prototype is a statement that tells the compiler about the function’s name, its return type, numbers and data types of its parameters. By using this information, the compiler cross-checks function parameters and their data type with function definition and function call.
+
+Function prototype works like a function declaration where it is necessary where the function reference or call is present before the function definition but optional if the function definition is present before the function call in the program.
+Syntax
+
+return_type function_name(parameter_list);
+
+Example:
+
+// C program to illustrate the function prototye
+#include <stdio.h>
+
+// Function prototype
+float calculateRectangleArea(float length, float width);
+
+int main()
+{
+	float length = 5.0;
+	float width = 3.0;
+
+	// Function call
+	float area = calculateRectangleArea(length, width);
+
+	printf("The area of the rectangle is: %.2f\n", area);
+
+	return 0;
+}
+
+// Function definition
+float calculateRectangleArea(float length, float width)
+{
+	return length * width;
+}
+
+
+
+======================================== * ========================================
+
+Question 11: Recursion in C?
+
+Answer: Recursion is the process of a function calling itself repeatedly till the given condition is satisfied. A function that calls itself directly or indirectly is called a recursive function and such kind of function calls are called recursive calls.
+
+
+
+======================================== * ========================================
+
+Question 11: Storage classes in C?
+
+Answer: C Storage Classes are used to describe the features of a variable/function. These features basically include the scope, visibility, and lifetime which help us to trace the existence of a particular variable during the runtime of a program.
+
+C language uses 4 storage classes, namely:
+
+storage classes in c
+
+1. auto
+
+This is the default storage class for all the variables declared inside a function or a block. Hence, the keyword auto is rarely used while writing programs in C language. Auto variables can be only accessed within the block/function they have been declared and not outside them (which defines their scope). Of course, these can be accessed within nested blocks within the parent block/function in which the auto variable was declared.
+
+However, they can be accessed outside their scope as well using the concept of pointers given here by pointing to the very exact memory location where the variables reside. They are assigned a garbage value by default whenever they are declared.  
+
+
+2. extern
+
+Extern storage class simply tells us that the variable is defined elsewhere and not within the same block where it is used. Basically, the value is assigned to it in a different block and this can be overwritten/changed in a different block as well. So an extern variable is nothing but a global variable initialized with a legal value where it is declared in order to be used elsewhere. It can be accessed within any function/block.
+
+Also, a normal global variable can be made extern as well by placing the ‘extern’ keyword before its declaration/definition in any function/block. This basically signifies that we are not initializing a new variable but instead, we are using/accessing the global variable only. The main purpose of using extern variables is that they can be accessed between two different files which are part of a large program.
+
+
+3. static
+
+This storage class is used to declare static variables which are popularly used while writing programs in C language. Static variables have the property of preserving their value even after they are out of their scope! Hence, static variables preserve the value of their last use in their scope. So we can say that they are initialized only once and exist till the termination of the program. Thus, no new memory is allocated because they are not re-declared.
+
+Their scope is local to the function to which they were defined. Global static variables can be accessed anywhere in the program. By default, they are assigned the value 0 by the compiler. 
+
+
+4. register
+
+This storage class declares register variables that have the same functionality as that of the auto variables. The only difference is that the compiler tries to store these variables in the register of the microprocessor if a free register is available. This makes the use of register variables to be much faster than that of the variables stored in the memory during the runtime of the program.
+
+If a free registration is not available, these are then stored in the memory only. Usually, a few variables which are to be accessed very frequently in a program are declared with the register keyword which improves the running time of the program. An important and interesting point to be noted here is that we cannot obtain the address of a register variable using pointers. 
+
+
+Syntax
+
+To specify the storage class for a variable, the following syntax is to be followed:
+
+storage_class var_data_type var_name;
