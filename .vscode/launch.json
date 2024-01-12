@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/opt/lampp/htdocs/Programming/c_programing/examination",
-      "program": "/opt/lampp/htdocs/Programming/c_programing/examination/build/Debug/outDebug",
+      "cwd": "/opt/lampp/htdocs/c_programing/examination",
+      "program": "/opt/lampp/htdocs/c_programing/examination/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

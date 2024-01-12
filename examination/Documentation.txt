@@ -1,0 +1,236 @@
+MCA 101 Programming in C with Data Structure
+
+
+
+==========
+Unit - I 
+==========
+
+
+* Fundamentals of C Programming
+
+Question 1. Structure of a C Program
+
+Answer: Basic Structure of C Program
+
+The basic structure of a C program is divided into 6 parts which makes it easy to read, modify, document, and understand in a particular format. C program must follow the below-mentioned outline in order to successfully compile and execute. Debugging is easier in a well-structured C program.
+Sections of the C Program
+
+There are 6 basic sections responsible for the proper execution of a program. Sections are mentioned below:
+
+    Documentation
+    Preprocessor Section
+    Definition
+    Global Declaration
+    Main() Function
+    Sub Programs
+
+1. Documentation
+
+This section consists of the description of the program, the name of the program, and the creation date and time of the program. It is specified at the start of the program in the form of comments. Documentation can be represented as:
+
+// description, name of the program, programmer name, date, time etc.
+
+or
+
+/*
+    description, name of the program, programmer name, date, time etc.
+*/
+
+Anything written as comments will be treated as documentation of the program and this will not interfere with the given code. Basically, it gives an overview to the reader of the program.
+
+
+2. Preprocessor Section
+
+All the header files of the program will be declared in the preprocessor section of the program. Header files help us to access other’s improved code into our code. A copy of these multiple files is inserted into our program before the process of compilation. 
+
+Example:
+
+#include<stdio.h>
+#include<math.h>
+
+3. Definition
+
+Preprocessors are the programs that process our source code before the process of compilation. There are multiple steps which are involved in the writing and execution of the program. Preprocessor directives start with the ‘#’ symbol. The #define preprocessor is used to create a constant throughout the program. Whenever this name is encountered by the compiler, it is replaced by the actual piece of defined code.
+
+Example:
+
+#define long long ll
+
+4. Global Declaration
+
+The global declaration section contains global variables, function declaration, and static variables. Variables and functions which are declared in this scope can be used anywhere in the program. 
+
+Example:
+
+int num = 18;
+
+5. Main() Function
+
+Every C program must have a main function. The main() function of the program is written in this section. Operations like declaration and execution are performed inside the curly braces of the main program. The return type of the main() function can be int as well as void too. void() main tells the compiler that the program will not return any value. The int main() tells the compiler that the program will return an integer value.
+
+Example:
+
+void main()
+
+or 
+
+int main()
+
+6. Sub Programs
+
+User-defined functions are called in this section of the program. The control of the program is shifted to the called function whenever they are called from the main or outside the main() function. These are specified as per the requirements of the programmer. 
+
+Example:
+
+int sum(int x, int y)
+{
+    return x+y;
+}
+
+
+=========
+
+Structure of C Program with example
+
+Example: Below C program to find the sum of 2 numbers:
+
+// Documentation 
+/**                      
+ * file: sum.c 
+ * author: you 
+ * description: program to find sum. 
+ */
+  
+// Link 
+#include <stdio.h>       
+  
+// Definition 
+#define X 20  
+  
+// Global Declaration 
+int sum(int y);    
+  
+// Main() Function 
+int main(void)        
+{ 
+  int y = 55; 
+  printf("Sum: %d", sum(y)); 
+  return 0; 
+} 
+  
+// Subprogram 
+int sum(int y)  
+{ 
+  return y + X; 
+}
+
+
+======================================== * ========================================
+
+Question 2: Data Types?
+
+Answer: Each variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc. Each data type requires different amounts of memory and has some specific operations which can be performed over it. The data type is a collection of data with values having fixed values, meaning as well as its characteristics.
+
+The data types in C can be classified as follows:
+
+
+(A) Primitive Data Types: Primitive data types are the most basic data types that are used for representing simple values such as integers, float, characters, etc.
+
+Data Type --> Integer, Character, Floating Point, Double Interger, Double Floating Point, Void
+
+(B) User Defined Data Types: The user-defined data types are defined by the user himself.
+
+Data Type --> Class, Structure, Union, etc
+
+(C) Derived Types: The data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types.
+
+Data Type --> Array, Pointer, Function, Reference
+
+Note: Different data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler. Below is a list of ranges along with the memory requirement and format specifiers on the 32-bit GCC compiler.
+
+
+Data Type's in c
+
+short Int, unsigned short int, unsigned int, int, long int, long unsigned int, long long int, unsigned long long int, unsigned char, signed char, float, Double, long Double
+
+
+======================================== * ========================================
+
+Question 3: Identifiers and keywords?
+
+Answer: 
+
+Keywords: Keywords are specific reserved words in C each of which has a specific feature associated with it. Almost all of the words which help us use the functionality of the C language are included in the list of keywords. So you can imagine that the list of keywords is not going to be a small one! There are a total of 32 keywords in C:
+
+   auto       break    case     char     const     continue
+   default    do       double   else     enum      extern
+   float      for      goto     if       int       long
+   register   return   short    signed   sizeof    static
+   struct     switch   typedef  union    unsigned  void
+   volatile   while 
+
+Identifiers: Identifiers are used as the general terminology for naming of variables, functions and arrays. These are user defined names consisting of arbitrarily long sequence of letters and digits with either a letter or the underscore(_) as a first character. Identifier names must differ in spelling and case from any keywords. You cannot use keywords as identifiers; they are reserved for special use. Once declared, you can use the identifier in later program statements to refer to the associated value. A special kind of identifier, called a statement label, can be used in goto statements. 
+
+Difference between Keyword and Identifier:
+
+(1) Keyword: Keywords are predefined word that gets reserved for working program that have special meaning and cannot get used anywhere else. 	
+Identifier: Identifiers are the values used to define different programming items such as variables, integers, structures, unions and others and mostly have an alphabetic character.
+
+(2) Keyword: Specify the type/kind of entity. 	
+Identifier: Identify the name of a particular entity.
+
+(3) Keyword: It always starts with a lowercase letter.
+Identifier: First character can be a uppercase, lowercase letter or underscore.
+
+(4) Keyword: A keyword should be in lower case.
+Identifier: An identifier can be in upper case or lower case.
+
+(5) Keyword: A keyword contains only alphabetical characters.
+Identifier: An identifier can consist of alphabetical characters, digits and underscores.
+
+(6) Keyword: They help to identify a specific property that exists within a computer language.
+Identifier: They help to locate the name of the entity that gets defined along with a keyword.
+
+(7) Keyword: No special symbol, punctuation is used.
+Identifier: No punctuation or special symbol except ‘underscore’ is used.
+
+(8) Keyword: Examples of keywords are: int, char, if, while, do, class etc. 	
+Identifier: Examples of identifiers are: Test, count1, high_speed, etc.
+
+
+======================================== * ========================================
+
+Question 4: Operators & Expressions?
+
+Answer: What is a C Operator?
+
+An operator in C can be defined as the symbol that helps us to perform some specific mathematical, relational, bitwise, conditional, or logical computations on values and variables. The values and variables used with operators are called operands. So we can say that the operators are the symbols that perform operations on operands.
+
+Operators-in-C
+
+For example,
+
+c = a + b;
+
+Here, ‘+’ is the operator known as the addition operator, and ‘a’ and ‘b’ are operands. The addition operator tells the compiler to add both of the operands ‘a’ and ‘b’.
+
+
+Types of Operators in C
+
+C language provides a wide range of operators that can be classified into 6 types based on their functionality:
+
+    Arithmetic Operators
+    Relational Operators
+    Logical Operators
+    Bitwise Operators
+    Assignment Operators
+    Other Operators
+
+1. Arithmetic Operations = +  -  *  /  % ++ --
+2. Relational Operators = <  >  <=  >=  == !==
+3. Logical Operator = &&  ||  !
+4. Bitwise Operators =  &  |  ^  ~  <<  >>
+5. Assignment Operators =  =  +=  -=  *=  /=  %=  &=  !=  ^=  >>=  <<=
+6. Other Operators = sizeof  ,  ?  :  .  -> 
+

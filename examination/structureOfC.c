@@ -1,25 +1,28 @@
-/* Documentation:
-file Name: structureOfC
-author: Piyush
-Description: Find Sum of x & y */
+// Documentation Section
+/* file Name:
+   Author Name:
+   Creation Date & Time:
+   Description:
+*/
 
-// Link
-#include<stdio.h>
+// Preprocessor Section
+#include <stdio.h>
 
-// Definition
-#define X 30
+// Defination Section
+#define X 10
 
-// Global Declaration
-int sum(int y);
+// Global Declaration Section
+int sum (int y);
 
 // Main Function
 int main(){
-    int y = 5;
-    printf("Sum: %d", sum(y));
+    int y = 1;
+    printf("%d", sum(y));
     return 0;
 }
 
-// Subprogram
+// Sub Programls
+
 int sum(int y){
     return y + X;
 }
