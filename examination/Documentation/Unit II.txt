@@ -190,3 +190,304 @@ Syntax
 
 strstr(str1, str2)
 
+
+
+======================================== * ========================================
+
+Question 4: Pointers?
+
+Answer: Pointers are one of the core components of the C programming language. A pointer can be used to store the memory address of other variables, functions, or even other pointers. The use of pointers allows low-level memory access, dynamic memory allocation, and many other functionality in C.
+
+
+================
+
+Pointer Expressions: datatype *pointer_name;
+
+Example: 
+
+// Declaration of integer variable
+int var = 10;
+
+// Initialization of pointer variable
+int *pointer = &var;
+
+
+================
+
+Pointer Arithmetics
+
+Pointer Arithmetic is the set of valid arithmetic operations that can be performed on pointers. The pointer variables store the memory address of another variable. It doesn’t store any value. 
+
+Hence, there are only a few operations that are allowed to perform on Pointers in C language. The C pointer arithmetic operations are slightly different from the ones that we generally use for mathematical calculations. These operations are:
+
+(1) Increment/Decrement of a Pointer
+(2) Addition of integer to a pointer
+(3) Subtraction of integer to a pointer
+(4) Subtracting two pointers of the same type
+(5) Comparison of pointers
+
+
+================
+
+Arrays of pointers
+
+It is generally used in C Programming when we want to point at multiple memory locations of a similar data type in our C program. We can access the data by dereferencing the pointer pointing to it.
+
+Syntax:
+
+pointer_type* array_name [array_size];
+
+Here,
+
+    pointer_type: Type of data the pointer is pointing to.
+    array_name: Name of the array of pointers.
+    array_size:  Size of the array of pointers.
+
+Example:
+
+// C program to demonstrate the use of array of pointers
+#include <stdio.h>
+
+int main()
+{
+	// declaring some temp variables
+	int var1 = 10;
+	int var2 = 20;
+	int var3 = 30;
+
+	// array of pointers to integers
+	int* ptr_arr[3] = { &var1, &var2, &var3 };
+
+	// traversing using loop
+	for (int i = 0; i < 3; i++) {
+		printf("Value of var%d: %d\tAddress: %p\n", i + 1, *ptr_arr[i], ptr_arr[i]);
+	}
+
+	return 0;
+}
+
+
+================
+
+Pointer to function
+
+
+#include<stdio.h>
+
+int fun(int a){
+    printf("Value of a: %d", a);
+    return 0;
+}
+int main(){
+
+    int (*fnc)(int) = &fun;
+
+    (fnc)(10);
+
+    return 0;
+}
+
+================
+
+Function returning pointers
+
+Pointers in C programming language is a variable which is used to store the memory address of another variable. We can pass pointers to the function as well as return pointer from a function. But it is not recommended to return the address of a local variable outside the function as it goes out of scope after function returns.
+
+
+
+
+======================================== * ========================================
+
+Question 5: Dynamic Memory Allocation in C using malloc(), calloc(), free() and realloc()?
+
+Answer: Since C is a structured language, it has some fixed rules for programming. One of them includes changing the size of an array. An array is a collection of items stored at contiguous memory locations. 
+
+(a) If there is a situation where only 5 elements are needed to be entered in this array. In this case, the remaining 4 indices are just wasting memory in this array. So there is a requirement to lessen the length (size) of the array from 9 to 5.
+
+(b) Take another situation. In this, there is an array of 9 elements with all 9 indices filled. But there is a need to enter 3 more elements in this array. In this case, 3 indices more are required. So the length (size) of the array needs to be changed from 9 to 12.
+
+This procedure is referred to as Dynamic Memory Allocation in C.
+Therefore, C Dynamic Memory Allocation can be defined as a procedure in which the size of a data structure (like Array) is changed during the runtime.
+
+C provides some functions to achieve these tasks. There are 4 library functions provided by C defined under <stdlib.h> header file to facilitate dynamic memory allocation in C programming.
+
+They are:
+
+(1) malloc()
+(2) calloc()
+(3) free()
+(4) realloc()
+
+
+(1) malloc() method
+
+The “malloc” or “memory allocation” method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It doesn’t Initialize memory at execution time so that it has initialized each block with the default garbage value initially. 
+
+Syntax of malloc() in C
+
+ptr = (cast-type*) malloc(byte-size)
+
+
+(2) calloc() method
+
+“calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. it is very much similar to malloc() but has two different points and these are:
+
+(a) It initializes each block with a default value ‘0’.
+(b) It has two parameters or arguments as compare to malloc()
+
+(3) free() method
+
+“free” method in C is used to dynamically de-allocate the memory. The memory allocated using functions malloc() and calloc() is not de-allocated on their own. Hence the free() method is used, whenever the dynamic memory allocation takes place. It helps to reduce wastage of memory by freeing it.
+
+Syntax of free() in C
+
+free(ptr);
+
+
+(4) realloc() method
+
+“realloc” or “re-allocation” method in C is used to dynamically change the memory allocation of a previously allocated memory. In other words, if the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically re-allocate memory. re-allocation of memory maintains the already present value and new blocks will be initialized with the default garbage value.
+
+Syntax of realloc() in C
+
+ptr = realloc(ptr, newSize);
+
+where ptr is reallocated with new size 'newSize'.
+
+
+
+======================================== * ========================================
+
+Question 6: Structures?
+
+Answer: The structure in C is a user-defined data type that can be used to group items of possibly different types into a single type. The struct keyword is used to define the structure in the C programming language. The items in the structure are called its member and they can be of any valid data type.
+
+
+=================
+
+C Structure Declaration
+
+We have to declare structure in C before using it in our program. In structure declaration, we specify its member variables along with their datatype. We can use the struct keyword to declare the structure in C using the following syntax:
+
+struct structure_name {
+    data_type member_name1;
+    data_type member_name1;
+    ....
+    ....
+};
+
+
+=================
+
+C Structure Definition
+
+To use structure in our program, we have to define its instance. We can do that by creating variables of the structure type. We can define structure variables using two methods:
+
+1. Structure Variable Declaration with Structure Template
+
+struct structure_name {
+    data_type member_name1;
+    data_type member_name1;
+    ....
+    ....
+}variable1, varaible2, ...;
+
+2. Structure Variable Declaration after Structure Template
+
+// structure declared beforehand
+struct structure_name variable1, variable2, .......;
+
+
+=================
+
+Access Structure Members
+
+We can access structure members by using the ( . ) dot operator.
+Syntax
+
+structure_name.member1;
+strcuture_name.member2;
+
+
+======================================== * ========================================
+
+Question 7: Unions?
+
+Answer: The Union is a user-defined data type in C language that can contain elements of the different data types just like structure. But unlike structures, all the members in the C union are stored in the same memory location. Due to this, only one member can store data at the given instance.
+
+Syntax of Union in C
+
+The syntax of the union in C can be divided into three steps which are as follows:
+C Union Declaration
+
+In this part, we only declare the template of the union, i.e., we only declare the members’ names and data types along with the name of the union. No memory is allocated to the union in the declaration.
+
+union union_name {
+    datatype member1;
+    datatype member2;
+    ...
+};
+
+
+
+======================================== * ========================================
+
+Question 8: File handling and related functions?
+
+Answer: File handing in C is the process in which we create, open, read, write, and close operations on a file. C language provides different functions such as fopen(), fwrite(), fread(), fseek(), fprintf(), etc. to perform input, output, and many different C file operations in our program.
+
+Why do we need File Handling in C?
+
+So far the operations using the C program are done on a prompt/terminal which is not stored anywhere. The output is deleted when the program is closed. But in the software industry, most programs are written to store the information fetched from the program. The use of file handling is exactly what the situation calls for.
+
+In order to understand why file handling is important, let us look at a few features of using files:
+
+(a) Reusability: The data stored in the file can be accessed, updated, and deleted anywhere and anytime providing high reusability.
+
+(b) Portability: Without losing any data, files can be transferred to another in the computer system. The risk of flawed coding is minimized with this feature.
+
+(c) Efficient: A large amount of input may be required for some programs. File handling allows you to easily access a part of a file using few instructions which saves a lot of time and reduces the chance of errors.
+
+(d) Storage Capacity: Files allow you to store a large amount of data without having to worry about storing everything simultaneously in a program.
+
+Types of Files in C
+
+A file can be classified into two types based on the way the file stores the data. They are as follows:
+
+
+(a) Text Files   (b) Binary Files
+
+1. Text Files
+
+A text file contains data in the form of ASCII characters and is generally used to store a stream of characters.
+
+    1. Each line in a text file ends with a new line character (‘\n’).
+    2. It can be read or written by any text editor.
+    3. They are generally stored with .txt file extension.
+    4. Text files can also be used to store the source code.
+
+2. Binary Files
+
+A binary file contains data in binary form (i.e. 0’s and 1’s) instead of ASCII characters. They contain data that is stored in a similar manner to how it is stored in the main memory.
+
+    1. The binary files can be created only from within a program and their contents can only be read by a program.
+    2. More secure as they are not easily readable.
+    3. They are generally stored with .bin file extension.
+
+
+===============
+
+C File Operations
+
+C file operations refer to the different possible operations that we can perform on a file in C such as:
+
+(1) Creating a new file – fopen() with attributes as “a” or “a+” or “w” or “w+”
+(2) Opening an existing file – fopen()
+(3) Reading from file – fscanf() or fgets()
+(4) Writing to a file – fprintf() or fputs()
+(5) Moving to a specific location in a file – fseek(), rewind()
+(6) Closing a file – fclose()
+
+
+
+
