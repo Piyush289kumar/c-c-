@@ -50,6 +50,24 @@ Question 3: What is Stack?
 
 Answer: Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). LIFO implies that the element that is inserted last, comes out first and FILO implies that the element that is inserted first, comes out last.
 
+Basic Operations on Stack
+
+In order to make manipulations in a stack, there are certain operations provided to us.
+
+    1. push() to insert an element into the stack
+    2. pop() to remove an element from the stack
+    3. top() Returns the top element of the stack.
+    4. isEmpty() returns true if stack is empty else false.
+    5. size() returns the size of stack.
+    
+
+Types of Stacks:
+
+1. Fixed Size Stack: As the name suggests, a fixed size stack has a fixed size and cannot grow or shrink dynamically. If the stack is full and an attempt is made to add an element to it, an overflow error occurs. If the stack is empty and an attempt is made to remove an element from it, an underflow error occurs.
+
+2. Dynamic Size Stack: A dynamic size stack can grow or shrink dynamically. When the stack is full, it automatically increases its size to accommodate the new element, and when the stack is empty, it decreases its size. This type of stack is implemented using a linked list, as it allows for easy resizing of the stack.
+
+
 
 
 ======================================== * ========================================
