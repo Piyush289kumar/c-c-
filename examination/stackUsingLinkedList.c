@@ -1,8 +1,6 @@
 /* Stack Using Linked List */
-
-#include<stdio.h>
-#include<stdlib.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 
 struct node
 {
@@ -12,32 +10,32 @@ struct node
 
 struct node *top = 0;
 
-void push(int el){
+void push(int el)
+{
 
     struct node *newnode;
     newnode = (struct node *)malloc(sizeof(struct node));
-
     newnode->data = el;
     newnode->next = top;
     top = newnode;
 }
 
-void pop(){
+void pop()
+{
     if (top == 0)
     {
         printf("\n\nStact is Emtpy");
     }
     else
     {
-        int delEl = top->data;
+        struct node *temp = top;
+        printf("\n\nPOP Element is : %d", top->data);
         top = top->next;
-        printf("\n\nPOP Element is : %d", delEl);
+        free(temp);
     }
-    
 }
-
-void peek(){
-
+void peek()
+{
     if (top == 0)
     {
         printf("\nStact is Empty");
@@ -46,14 +44,11 @@ void peek(){
     {
         printf("\n\nTop Most Element of Stack : %d", top->data);
     }
-    
 }
-
-void display(){
-
+void display()
+{
     struct node *temp;
     temp = top;
-
     if (top == 0)
     {
         printf("\nStack is Empty");
@@ -65,14 +60,10 @@ void display(){
             printf("\nElement : %d\n", temp->data);
             temp = temp->next;
         };
-        
     }
-    
 }
-
-
-int main(){
-
+int main()
+{
     push(1);
     push(2);
     push(3);
