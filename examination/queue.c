@@ -16,29 +16,38 @@ void enqueue(int el)
     struct node *newnode = 0;
     newnode = (struct node *)malloc(sizeof(struct node));
     newnode->data = el;
-    newnode->link = 0;
+    newnode->link = front;
 
     if (front == 0 && rear == 0)
     {
         front = rear = newnode;
+        rear->link = front;
     }
     else
     {
         rear->link = newnode;
         rear = newnode;
+        rear->link = front;
     }
 };
 
 void dequeue()
 {
+    struct node *temp = front;
+
     if (front == 0 && rear == 0)
     {
         printf("\nQueue is Empty");
     }
+    else if (front == rear)
+    {
+        front = rear = 0;
+        free(temp);
+    }
     else
     {
-        struct node *temp = front;
         front = front->link;
+        rear->link = front;
         printf("\nDeleted Element of Queue is : %d", temp->data);
         free(temp);
     }
@@ -54,17 +63,18 @@ void display()
     {
         struct node *temp = front;
 
-        while (temp != 0)
+        while (temp->link != front)
         {
             printf("\nData Part : %d\n", temp->data);
             temp = temp->link;
         }
+        printf("\nData Part : %d\n", temp->data);
     }
 }
 
 void peek()
 {
-     if (front == 0 && rear == 0)
+    if (front == 0 && rear == 0)
     {
         printf("\nQueue is Empty");
     }
@@ -86,5 +96,6 @@ int main()
     dequeue();
     display();
     peek();
+
     return 0;
 }
