@@ -1,0 +1,39 @@
+MCA 101 Programming in C with Data Structure
+
+
+=============
+Unit - V
+=============
+
+
+======================================== * ========================================
+
+Question 1: What is Tree?
+
+Answer: A tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search. It is a collection of nodes that are connected by edges and has a hierarchical relationship between the nodes. 
+
+The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.
+
+This data structure is a specialized method to organize and store data in the computer to be used more effectively. It consists of a central node, structural nodes, and sub-nodes, which are connected via edges. We can also say that tree data structure has roots, branches, and leaves connected with one another.
+
+
+Types of Tree data structures:
+
+(1) Binary tree: In a binary tree, each node can have a maximum of two children linked to it. Some common types of binary trees include full binary trees, complete binary trees, balanced binary trees, and degenerate or pathological binary trees.
+
+(2) Ternary Tree: A Ternary Tree is a tree data structure in which each node has at most three child nodes, usually distinguished as “left”, “mid” and “right”.
+
+(3) N-ary Tree or Generic Tree: Generic trees are a collection of nodes where each node is a data structure that consists of records and a list of references to its children(duplicate references are not allowed). Unlike the linked list, each node stores the address of multiple nodes.
+
+
+Basic Operation Of Tree Data Structure:
+
+(1) Create – create a tree in the data structure.
+(2) Insert − Inserts data in a tree.
+(3) Search − Searches specific data in a tree to check whether it is present or not.
+(4) Traversal:
+
+    (a) Preorder Traversal – perform Traveling a tree in a pre-order manner in the data structure.
+    (b) In order Traversal – perform Traveling a tree in an in-order manner.
+    (c) Post-order Traversal –perform Traveling a tree in a post-order manner.
+

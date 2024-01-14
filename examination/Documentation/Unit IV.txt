@@ -1,0 +1,33 @@
+MCA 101 Programming in C with Data Structure
+
+
+=============
+Unit - IV
+=============
+
+
+======================================== * ========================================
+
+Question 1: What is Linked List?
+
+Answer: A Linked List is a linear data structure which looks like a chain of nodes, where each node is a different element. Unlike Arrays, Linked List elements are not stored at a contiguous location.
+
+It is basically chains of nodes, each node contains information such as data and a pointer to the next node in the chain. In the linked list there is a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.
+ 
+There are mainly three types of linked lists:
+
+(1) Single-linked list
+(2) Double linked list
+(3) Circular linked list
+
+1. Singly-linked list
+
+Traversal of items can be done in the forward direction only due to the linking of every node to its next node.
+
+2. Doubly linked list
+
+Traversal of items can be done in both forward and backward directions as every node contains an additional prev pointer that points to the previous node.
+
+3. Circular linked lists
+
+A circular linked list is a type of linked list in which the first and the last nodes are also connected to each other to form a circle, there is no NULL at the end. 
